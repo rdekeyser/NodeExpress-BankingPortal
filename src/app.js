@@ -10,13 +10,13 @@ app.set('view engine','ejs');
 
 app.use(express.static(path.join(__dirname,'public'))); 
 
-const accountdata = fs.readFileSync(path.join(__dirname,'json','accounts.json'),'utf8');
+const accountData = fs.readFileSync(path.join(__dirname,'json','accounts.json'),'utf8');
 
-const accounts = JSON.parse(accountdata);
+const accounts = JSON.parse(accountData);
 
-const userdata = fs.readFileSync(path.join(__dirname,'json','users.json'),'utf8');
+const userData = fs.readFileSync(path.join(__dirname,'json','users.json'),'utf8');
 
-const users = JSON.parse(userdata);
+const users = JSON.parse(userData);
 
 app.get('/',(req,res) =>res.render('index',{title:'Account Summary',accounts}));
 
